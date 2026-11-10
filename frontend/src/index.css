@@ -1,0 +1,137 @@
+/* ---------- Theme variables ---------- */
+:root {
+  --page-bg: #020617;
+  --text-main: #f1f5f9;
+  --border-default: #1e293b;
+  --input-bg: #020617;
+  --input-text: #f1f5f9;
+  --input-border: #1e293b;
+  --placeholder: #64748b;
+  --file-btn-bg: rgba(14, 165, 233, 0.1);
+  --file-btn-text: #38bdf8;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --page-bg: #f8fafc;
+  --text-main: #0f172a;
+  --border-default: #e2e8f0;
+  --input-bg: #f8fafc;
+  --input-text: #0f172a;
+  --input-border: #cbd5e1;
+  --placeholder: #94a3b8;
+  --file-btn-bg: rgba(14, 165, 233, 0.12);
+  --file-btn-text: #0369a1;
+  color-scheme: light;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, ::before, ::after {
+  border-color: var(--border-default);
+}
+
+html, body, #root {
+  min-height: 100%;
+  background-color: var(--page-bg);
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ---------- Form elements ---------- */
+input,
+textarea,
+select {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder) !important;
+}
+
+select option {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4) !important;
+}
+
+input[type="file"] {
+  color: var(--placeholder);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--file-btn-bg) !important;
+  color: var(--file-btn-text) !important;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+  -webkit-text-fill-color: var(--input-text) !important;
+  caret-color: var(--input-text);
+}
+
+/* ---------- Light theme: remap the dark Tailwind classes ---------- */
+:root[data-theme="light"] .bg-slate-950 { background-color: #f8fafc; }
+:root[data-theme="light"] .bg-slate-900,
+:root[data-theme="light"] .bg-slate-900\/90,
+:root[data-theme="light"] .bg-slate-900\/60 { background-color: #ffffff; }
+:root[data-theme="light"] .bg-slate-900\/50,
+:root[data-theme="light"] .bg-slate-900\/40 { background-color: rgba(255, 255, 255, 0.75); }
+:root[data-theme="light"] .bg-slate-950\/80 { background-color: rgba(248, 250, 252, 0.85); }
+:root[data-theme="light"] .bg-slate-800 { background-color: #e2e8f0; }
+:root[data-theme="light"] .hover\:bg-slate-800:hover,
+:root[data-theme="light"] .hover\:bg-slate-800\/50:hover { background-color: #e2e8f0; }
+
+:root[data-theme="light"] .border-slate-800 { border-color: #e2e8f0; }
+:root[data-theme="light"] .border-slate-700,
+:root[data-theme="light"] .hover\:border-slate-700:hover { border-color: #cbd5e1; }
+:root[data-theme="light"] .divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]) { border-color: #e2e8f0; }
+
+:root[data-theme="light"] .text-white,
+:root[data-theme="light"] .text-slate-100,
+:root[data-theme="light"] .hover\:text-white:hover { color: #0f172a; }
+:root[data-theme="light"] .text-slate-200,
+:root[data-theme="light"] .text-slate-300 { color: #334155; }
+:root[data-theme="light"] .text-slate-400,
+:root[data-theme="light"] .text-slate-500 { color: #64748b; }
+:root[data-theme="light"] .text-slate-600 { color: #94a3b8; }
+
+:root[data-theme="light"] .text-sky-400 { color: #0284c7; }
+:root[data-theme="light"] .hover\:text-sky-400:hover,
+:root[data-theme="light"] .hover\:text-sky-300:hover { color: #0369a1; }
+:root[data-theme="light"] .text-emerald-400 { color: #059669; }
+:root[data-theme="light"] .text-amber-400 { color: #d97706; }
+:root[data-theme="light"] .text-rose-400,
+:root[data-theme="light"] .hover\:text-rose-300:hover { color: #e11d48; }
+:root[data-theme="light"] .text-red-400 { color: #dc2626; }
+:root[data-theme="light"] .text-indigo-400 { color: #4f46e5; }
